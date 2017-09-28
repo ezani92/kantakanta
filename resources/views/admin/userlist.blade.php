@@ -35,6 +35,10 @@
 							                    <td>Admin</td>
 							                    @elseif ($user->guard == 2)
 							                    <td>Doctor</td>
+							                    @elseif ($user->guard == 3)
+							                    <td>Stockist</td>
+							                    @elseif ($user->guard == 4)
+							                    <td>Patient</td>
 							                    @endif
 							                    <td>{{ \Carbon\Carbon::parse($user->created_at)->format('d M Y, h:i A') }}</td>
 							                    <td class="actions"><a href="user/{{ $user->id }}" class="icon"><span class="label label-primary"><i class="mdi mdi-file"></i> View</span></a> <a href="user/{{ $user->id }}/delete" onclick="return confirm('Are you sure want to delete this user?')" class="icon"><span class="label label-danger"><i class="mdi mdi-delete"></i> Delete</span></a></td>
